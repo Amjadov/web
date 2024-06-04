@@ -26,7 +26,7 @@ define( 'DB_NAME', 'epiz_25262427_wpblog' );
 define( 'DB_USER', '25262427_3' );
 
 /** MySQL database password */
-define( 'DB_PASSWORD', ')a6S6.dp52' );
+define( 'DB_PASSWORD', ')' );
 
 /** MySQL hostname */
 define( 'DB_HOST', 'sql111.byetcluster.com' );

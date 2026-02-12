@@ -1,377 +1,1586 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8" />
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1" />
-<META NAME="ROBOTS" CONTENT="INDEX, FOLLOW">
-<title>Welcome - Amjad Masoud</title>
-<link rel="shortcut icon" href="favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amjad Masoud — Manager | Digital Transformation | AI Integration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --ey-yellow: #FFE600;
+            --ey-yellow-soft: #fff176;
+            --ey-dark: #2E2E38;
+            --ey-darker: #1A1A24;
+            --ey-gray: #747480;
+            --ey-light-gray: #C0C0C8;
+            --ey-white: #FFFFFF;
+            --ey-off-white: #F6F6FA;
+            --ey-accent: #FFD000;
+            --gradient-gold: linear-gradient(135deg, #FFE600, #FFD000, #FFC107);
+        }
 
-<!-- Google Font-->
-<link href='http://fonts.googleapis.com/css?family=Roboto:400,300italic,300,100italic,100,400italic,500,500italic,700,900,900italic,700italic%7COswald:400,300,700' rel='stylesheet' type='text/css'>
-<!-- Design Style -->
-<link rel="stylesheet" type="text/css" href="css/scroll.css" />
-<link rel="stylesheet" type="text/css" href="css/style.css" />
-<!-- Icon -->
-<link rel="stylesheet" type="text/css" href="css/font-awesome.css" />
-<!-- Portfolio Thumbnail / Slider -->
-<link rel="stylesheet" type="text/css" href="css/portfolio.css" />
-<link rel="stylesheet" type="text/css" href="css/carousel.css">
-<!-- Responsive -->
-<link rel="stylesheet" type="text/css" href="css/responsive.css" />
-<!-- Pie Chart / Skills -->
-<script type="text/javascript" src="js/jquery-2.0.3.min.js"></script>
-<!-- Send Email -->
-<script type="text/javascript" src="js/sendemail.js"></script>
-<!-- Progressbar / Skills-->
-<script type="text/javascript" src="js/progressbar.js"></script>
-<!-- Portfolio-->
-<script src="js/modernizr.custom.js"></script>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--ey-darker);
+            color: var(--ey-white);
+            overflow-x: hidden;
+        }
+
+        /* ===================== ANIMATED BACKGROUND ===================== */
+        .bg-pattern {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .bg-pattern .line {
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(255, 230, 0, 0.04), transparent);
+            animation: bgLine 8s ease-in-out infinite;
+        }
+
+        .bg-pattern .line:nth-child(1) {
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .bg-pattern .line:nth-child(2) {
+            left: 25%;
+            animation-delay: 1.5s;
+        }
+
+        .bg-pattern .line:nth-child(3) {
+            left: 50%;
+            animation-delay: 3s;
+        }
+
+        .bg-pattern .line:nth-child(4) {
+            left: 75%;
+            animation-delay: 4.5s;
+        }
+
+        .bg-pattern .line:nth-child(5) {
+            left: 90%;
+            animation-delay: 6s;
+        }
+
+        @keyframes bgLine {
+
+            0%,
+            100% {
+                opacity: 0;
+                transform: scaleY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: scaleY(1);
+            }
+        }
+
+        /* ===================== HERO / HEADER ===================== */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 20px;
+            background: linear-gradient(160deg, var(--ey-darker) 0%, #23232d 50%, var(--ey-dark) 100%);
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -150px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 230, 0, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroGlow 6s ease-in-out infinite;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 230, 0, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: heroGlow 6s ease-in-out infinite reverse;
+        }
+
+        @keyframes heroGlow {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: scale(1.2);
+                opacity: 1;
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            max-width: 900px;
+        }
+
+
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 230, 0, 0.1);
+            border: 1px solid rgba(255, 230, 0, 0.2);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--ey-yellow);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 30px;
+            animation: fadeSlideDown 1s ease-out;
+        }
+
+        .hero-badge .dot {
+            width: 8px;
+            height: 8px;
+            background: var(--ey-yellow);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            animation: fadeSlideUp 1s ease-out 0.2s both;
+        }
+
+        .hero h1 .highlight {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-title-role {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: var(--ey-light-gray);
+            font-weight: 300;
+            margin-bottom: 35px;
+            letter-spacing: 1px;
+            animation: fadeSlideUp 1s ease-out 0.4s both;
+        }
+
+        .hero-title-role span {
+            color: var(--ey-yellow);
+            font-weight: 500;
+        }
+
+        .hero-contact {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 35px;
+            animation: fadeSlideUp 1s ease-out 0.6s both;
+        }
+
+        .hero-contact a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--ey-light-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            padding: 6px 14px;
+            border-radius: 8px;
+        }
+
+        .hero-contact a:hover {
+            color: var(--ey-yellow);
+            background: rgba(255, 230, 0, 0.08);
+            transform: translateY(-2px);
+        }
+
+        .hero-contact a i {
+            font-size: 1rem;
+            color: var(--ey-yellow);
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 50px;
+            animation: fadeSlideUp 1s ease-out 0.8s both;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.75rem;
+            color: var(--ey-gray);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 4px;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: bounce 2s ease-in-out infinite;
+            z-index: 1;
+        }
+
+        .scroll-indicator i {
+            color: var(--ey-yellow);
+            font-size: 1.5rem;
+            opacity: 0.6;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateX(-50%) translateY(0);
+            }
+
+            50% {
+                transform: translateX(-50%) translateY(10px);
+            }
+        }
+
+        /* ===================== NAVIGATION ===================== */
+        .nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 18px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.4s ease;
+        }
+
+        .nav.scrolled {
+            background: rgba(26, 26, 36, 0.95);
+            backdrop-filter: blur(20px);
+            padding: 12px 40px;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-logo {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: var(--ey-yellow);
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--ey-light-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--ey-yellow);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--ey-yellow);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* ===================== SECTIONS ===================== */
+        section {
+            position: relative;
+            z-index: 1;
+            padding: 100px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--ey-yellow);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-tag::before,
+        .section-tag::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30px;
+            height: 1px;
+            background: var(--ey-yellow);
+            opacity: 0.4;
+        }
+
+        .section-tag::before {
+            right: calc(100% + 15px);
+        }
+
+        .section-tag::after {
+            left: calc(100% + 15px);
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            font-weight: 700;
+        }
+
+        /* ===================== ABOUT / SUMMARY ===================== */
+        .about-section {
+            background: linear-gradient(180deg, var(--ey-dark) 0%, var(--ey-darker) 100%);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .about-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--ey-light-gray);
+        }
+
+        .about-text p {
+            margin-bottom: 20px;
+        }
+
+        .about-cards {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .about-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.4s ease;
+        }
+
+        .about-card:hover {
+            border-color: rgba(255, 230, 0, 0.2);
+            background: rgba(255, 230, 0, 0.03);
+            transform: translateY(-4px);
+        }
+
+        .about-card .icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: rgba(255, 230, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 14px;
+            color: var(--ey-yellow);
+            font-size: 1rem;
+        }
+
+        .about-card h4 {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .about-card p {
+            font-size: 0.78rem;
+            color: var(--ey-gray);
+            line-height: 1.5;
+        }
+
+        /* ===================== SKILLS ===================== */
+        .skills-section {
+            background: var(--ey-darker);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s ease;
+        }
+
+        .skill-category:hover {
+            border-color: rgba(255, 230, 0, 0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+        }
+
+        .skill-category h3 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .skill-category h3 i {
+            color: var(--ey-yellow);
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .skill-tag {
+            padding: 6px 14px;
+            border-radius: 8px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            background: rgba(255, 230, 0, 0.06);
+            color: var(--ey-light-gray);
+            border: 1px solid rgba(255, 230, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: default;
+        }
+
+        .skill-tag:hover {
+            background: rgba(255, 230, 0, 0.12);
+            color: var(--ey-yellow);
+            transform: scale(1.05);
+        }
+
+        /* ===================== EXPERIENCE TIMELINE ===================== */
+        .experience-section {
+            background: linear-gradient(180deg, var(--ey-darker) 0%, var(--ey-dark) 50%, var(--ey-darker) 100%);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--ey-yellow), rgba(255, 230, 0, 0.1));
+        }
+
+        .timeline-item {
+            position: relative;
+            padding-left: 75px;
+            margin-bottom: 45px;
+            opacity: 0;
+            transform: translateX(-20px);
+            transition: all 0.6s ease;
+        }
+
+        .timeline-item.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 21px;
+            top: 6px;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--ey-darker);
+            border: 3px solid var(--ey-yellow);
+            z-index: 1;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            background: var(--ey-yellow);
+            box-shadow: 0 0 20px rgba(255, 230, 0, 0.4);
+        }
+
+        .timeline-item.current .timeline-dot {
+            background: var(--ey-yellow);
+            box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+            animation: currentPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes currentPulse {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(255, 230, 0, 0.6);
+            }
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 8px;
+        }
+
+        .timeline-company {
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: var(--ey-white);
+        }
+
+        .timeline-current-badge {
+            font-size: 0.65rem;
+            padding: 3px 10px;
+            border-radius: 20px;
+            background: var(--ey-yellow);
+            color: var(--ey-darker);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .timeline-role {
+            font-size: 0.92rem;
+            color: var(--ey-yellow-soft);
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .timeline-meta {
+            font-size: 0.78rem;
+            color: var(--ey-gray);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .timeline-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .timeline-desc {
+            list-style: none;
+        }
+
+        .timeline-desc li {
+            position: relative;
+            padding-left: 18px;
+            font-size: 0.85rem;
+            color: var(--ey-light-gray);
+            line-height: 1.7;
+            margin-bottom: 4px;
+        }
+
+        .timeline-desc li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--ey-yellow);
+            font-size: 0.9rem;
+        }
+
+        /* Sub-roles within same company */
+        .timeline-subrole {
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* ===================== CERTIFICATIONS & EDUCATION ===================== */
+        .certs-section {
+            background: var(--ey-darker);
+        }
+
+        .certs-edu-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .cert-card,
+        .edu-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            transition: all 0.3s ease;
+        }
+
+        .cert-card:hover,
+        .edu-card:hover {
+            border-color: rgba(255, 230, 0, 0.15);
+            transform: translateY(-3px);
+        }
+
+        .cert-card h4,
+        .edu-card h4 {
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cert-card h4 i,
+        .edu-card h4 i {
+            color: var(--ey-yellow);
+        }
+
+        .cert-item,
+        .edu-item {
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .cert-item:last-child,
+        .edu-item:last-child {
+            border-bottom: none;
+        }
+
+        .cert-item .name,
+        .edu-item .school {
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: var(--ey-white);
+        }
+
+        .cert-item .issuer,
+        .edu-item .degree {
+            font-size: 0.78rem;
+            color: var(--ey-gray);
+            margin-top: 2px;
+        }
+
+        /* ===================== LANGUAGES & EXTRAS ===================== */
+        .extras-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .extra-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 24px;
+            text-align: center;
+            transition: all 0.4s ease;
+        }
+
+        .extra-card:hover {
+            border-color: rgba(255, 230, 0, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .extra-card i {
+            font-size: 1.8rem;
+            color: var(--ey-yellow);
+            margin-bottom: 14px;
+        }
+
+        .extra-card h4 {
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .extra-card p {
+            font-size: 0.78rem;
+            color: var(--ey-gray);
+            line-height: 1.5;
+        }
+
+        /* ===================== FOOTER ===================== */
+        footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 50px 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            background: var(--ey-darker);
+        }
+
+        .footer-cta {
+            font-size: clamp(1.4rem, 3vw, 2rem);
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+
+        .footer-cta .highlight {
+            background: var(--gradient-gold);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ey-light-gray);
+            font-size: 1.1rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            background: var(--ey-yellow);
+            color: var(--ey-darker);
+            border-color: var(--ey-yellow);
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(255, 230, 0, 0.2);
+        }
+
+        .footer-copy {
+            font-size: 0.78rem;
+            color: var(--ey-gray);
+        }
+
+        /* ===================== ANIMATIONS ===================== */
+        @keyframes fadeSlideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeSlideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .reveal-delay-1 {
+            transition-delay: 0.1s;
+        }
+
+        .reveal-delay-2 {
+            transition-delay: 0.2s;
+        }
+
+        .reveal-delay-3 {
+            transition-delay: 0.3s;
+        }
+
+        .reveal-delay-4 {
+            transition-delay: 0.4s;
+        }
+
+        /* Stagger children animations */
+        .stagger-children>* {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+
+        .stagger-children.visible>*:nth-child(1) {
+            transition-delay: 0.05s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(2) {
+            transition-delay: 0.1s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(3) {
+            transition-delay: 0.15s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(4) {
+            transition-delay: 0.2s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(5) {
+            transition-delay: 0.25s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-children.visible>*:nth-child(6) {
+            transition-delay: 0.3s;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ===================== RESPONSIVE ===================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .certs-edu-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .extras-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 30px;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+
+            section {
+                padding: 70px 16px;
+            }
+
+            .timeline::before {
+                left: 18px;
+            }
+
+            .timeline-item {
+                padding-left: 55px;
+            }
+
+            .timeline-dot {
+                left: 9px;
+            }
+        }
+
+        /* ===================== MOBILE NAV TOGGLE ===================== */
+        .nav-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--ey-yellow);
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .nav-toggle {
+                display: block;
+            }
+        }
+
+        /* ===================== TYPING CURSOR ===================== */
+        .typing-cursor {
+            display: inline-block;
+            width: 3px;
+            height: 1em;
+            background: var(--ey-yellow);
+            margin-left: 4px;
+            animation: blink 1s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0;
+            }
+        }
+
+        /* Smooth progress bar for skills */
+        .skill-bar-container {
+            margin-top: 12px;
+        }
+
+        .skill-bar {
+            height: 3px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 3px;
+            overflow: hidden;
+            margin-top: 6px;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background: var(--gradient-gold);
+            border-radius: 3px;
+            width: 0;
+            transition: width 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        /* Yellow diagonal accent stripe */
+        .accent-stripe {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 200px;
+            height: 4px;
+            background: var(--gradient-gold);
+            transform: skewX(-45deg);
+            transform-origin: right;
+        }
+    </style>
 </head>
-<body>
-<div id="container" class="container"> 
-  <!-- Left Menu / Logo-->
-  <aside class="menu" id="menu">
-    <div class="logo"> 
-      <!-- Logo image--> 
-      <img src="images/logo.png" width="140" height="140" alt=""/> 
-      <!-- Logo name--> 
-      <span>Amjad Masoud</span></div>
-    <!-- Mobile Navigation--> 
-    <a href="#menu1" class="menu-link"></a> 
-    <!-- Left Navigation-->
-    <nav id="menu1" role="navigation"> <a href="#chapterintroduction"><span id="link_introduction" class="active">Home</span></a> <a href="#chapterabout"><span id="link_about">About</span></a> <a href="#chapterskills"><span id="link_skills">Skills</span></a> <a href="#chapterexperience"><span id="link_experience">Experience</span></a> <a href="#chaptereducation"><span id="link_education">Education</span></a><a href="#chaptercontact"><span id="link_contact">Contact</span></a><a href="blog.html"><span id="link_blog">Blog</span></a></nav>
-    <div class="social"> <a href="https://www.facebook.com/amjad.masoud.9" target="_blank" class="facebook"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/AmjadoVI" target="_blank" class="twitter"><i class="fa fa-twitter"></i></a> <a href="https://www.linkedin.com/in/amjad-masoud-9308aa11/" target="_blank" class="linkedin"><i class="fa fa-linkedin"></i></a> </div>
 
-    <div class="copyright"> © Amjad Masoud.<br>
-      All Rights Reserved. </div>
-  </aside>
-  <!-- Go to top link for mobile device --> 
-  <a href="#menu" class="totop-link">Go to the top</a>
-  <div class="content-scroller">
-    <div class="content-wrapper"> 
-      
-      <!-- Introduction -->
-      <article class="content introduction noscroll" id="chapterintroduction">
-        <div class="inner">
-          <h2><span>Hello, I'm</span><br>
-            Amjad Masoud</h2>
-          <span class="title">Senior Software Engineer / Student Of Life </span> </div>
-        <div id="owl-demo" class="owl-carousel">
-           <div class="item"><img src="images/home_main.png" alt="" /></div>
-          <div class="item"><img src="images/home_main_2.png" alt="" /></div>
-          <div class="item"><img src="http://placehold.it/804x500" alt="" /></div>
-        </div>
-      </article>
-      
-      <!-- About -->
-      <article class="content about white-bg" id="chapterabout">
-        <div class="inner">
-          <h2>About</h2>
-          <div class="title-divider"></div>
-          <div class="about-con">
-            <ul>
-              <li>Name: Amjad Masoud</li>
-              <li>Email: <a href="mailto:amjadmasoud@hotmail.com">amjadmasoud@hotmail.com</a></li>
-              <li>Phone: (962) -799-312-787</li>
-              <li>Date of birth: 23 August 1977</li>
-              <li>Address: PO Box 11937 Amman, Jordan.</li>
-              <li>Nationality: Jordan.</li>
-            </ul>
-            <h3>Professional Profile</h3>
-            <p>"I made a profession out of my passion", learned programming when I was 15, and I "did them all": web, desktop, mobile, games, controllers and AI, I let no language stand in my way, C#, PHP, Python, embeded C and Java. <br>
-            </p>
-            <a href="files/amjad_resume.pdf" class="button">Download resume as PDF format</a> <img src="images/approved.png" class="signature" alt="" /> </div>
-        </div>
-      </article>
-      
-      <!-- Skills -->
-      <article class="content skills gray-bg" id="chapterskills">
-        <div class="inner">
-          <h2>Skills</h2>
-          <div class="title-divider"></div>
-          <h3>My Skills</h3>
-          <p>Microsoft SQL Server,.NET,T-SQL,Javascript,CSS,HTML,JQuery,MySQL,SQL,PHP Laravel,PHP,HTML5,Amazon Web Services (AWS),Python,Microsoft Office,Windows,Linux,Visual Basic .NET (VB.NET),vb6,Crystal Reports,XML,ASP.NET,MVC,Visual Studio.</p>
-          <div class="skills-con">
-            <div class="container-sub margin-top50">
-              <div class="row">
-                <div class="col-6 margin-bottom50">
-                  <div class="col-6"><span class="chart" data-percent="88"><span class="percent"></span> </span></div>
-                  <div class="col-6 chart-text">
-                    <h4>Software Development</h4>
-                    <p>Expert, 15 years</p>
-                  </div>
-                </div>
-                <div class="col-6 margin-bottom50">
-                  <div class="col-6"><span class="chart" data-percent="75"><span class="percent"></span> </span></div>
-                  <div class="col-6 chart-text">
-                    <h4>Software / Business Analysis</h4>
-                    <p>Advanced, 4 years</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="col-6"><span class="chart" data-percent="90"><span class="percent"></span> </span></div>
-                  <div class="col-6 chart-text">
-                    <h4>Database Development</h4>
-                    <p>Expert, 12 years</p>
-                  </div>
-                </div>
-                <div class="col-6">
-                  <div class="col-6"><span class="chart" data-percent="65"><span class="percent"></span> </span></div>
-                  <div class="col-6 chart-text">
-                    <h4>Cloud Architect</h4>
-                    <p>Advanced, 1 years</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="full-divider"></div>
-            <div class="container-sub">
-              <div class="row">
-                <h3>Language Skills</h3>
-                <p></p>
-				<div class="progressbar-main margin-top50">
-                  <div class="progress-bar-description">Arabic Native</div>
-                  <div id="progressBar" class="progress">
-                    <div class="progress-value"></div>
-                  </div>
-                </div>
-                <div class="progressbar-main margin-top50">
-                  <div class="progress-bar-description">English Experienced</div>
-                  <div id="progressBar2" class="progress">
-                    <div class="progress-value"></div>
-                  </div>
-                </div>
-                <div class="progressbar-main margin-top40">
-                  <div class="progress-bar-description">French Fair</div>
-                  <div id="progressBar3" class="progress">
-                    <div class="progress-value"></div>
-                  </div>
-                </div>
-                <div class="progressbar-main margin-top40">
-                  <div class="progress-bar-description">German Basic</div>
-                  <div id="progressBar4" class="progress">
-                    <div class="progress-value"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Experience -->
-      <article class="content experience white-bg" id="chapterexperience">
-        <div class="inner">
-          <h2>Experience</h2>
-          <div class="title-divider"></div>
-          <h3>14 Years Experience!</h3>
-          <p>Skilled in utilising multi-technologies, such as ASP.NET, web services, memory caching, Redis Databases, MQ services.
-Strong leadership skills with demonstrated success developing successful software through coaching and management
-of junior developers. Adept at implementing ERP system across the company in 5 cities and 450 employees. Robust IT
-management, data analysis, and business analysis skills. Knowledge of professional software engineering practices
-and best practices for the full software development life cycle. Excellent written and verbal communication skills with
-ability to present complex technical information in a concise manner. </p>
-          <div class="experience-con">
-            <div class="container-sub">
-              <div class="full-divider"></div>
-              <div class="row">
-                <div class="experience-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-send-o"></i></div>
-                    <div class="flot-left">
-                      <h5>MStart</h5>
-                      <h4>Systems Developer</h4>
-                      <span>2018 - Current</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> - Optimised the system to manage more than 300,000 transactions per day by rewriting core dlls, that resulted in
-improving sales by 400%. 
--Identified and resolved issues, such as deadlocks, timeouts, and bottlenecks, improved transaction speed by
-the millisecond as well as scaled out applications and databases. 
--Defined and implemented stored procedures and user-defined data types. </div>
-                </div>
-                <div class="full-divider"></div>
-                <div class="experience-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-briefcase"></i></div>
-                    <div class="flot-left">
-                      <h5>Kafou Services</h5>
-                      <h4>Development Consultant</h4>
-                      <span>2017 - 2018</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top">  Carried out Machine learning research using Python and Scikit-Learn.  Utilized Python Django, Python Signals, and MySQL for implementing two-way data synchronization practices.  Introduced Web application project "ComplianceArch" using C# ASP.NET, JQuery, JavaScript and SQL Server. Delivered Kafou application back-end web services and control panel support using PHP Codeigniter, MySQL,
-and JQuery.
- Utilized PHP Laravel, MySQL, Pubnub channels, payfort online payment, and google maps for Wayt web
-application back end API and control panel.
- Co-ordinated peer-to-peer and group video calling using PHP Laravel, MySQL and the Twilio SDK. 
- </div>
-                </div>
-                <div class="full-divider"></div>
-                <div class="experience-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-arrows-alt"></i></div>
-                    <div class="flot-left">
-                      <h5>Mahmoud Saleh Abbar</h5>
-                      <h4>ERP Implementation Specialist</h4>
-                      <span>2013 - 2017</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> Streamlined business processes and automated multiple back office functions related to technology, services,
-and human resources.
- Implemented a new ERP system across the company in five cities and 450 employees.
- Aimed at producing data for statistics, finance, and auditing by defining and implementing complex and
-advanced T-SQL stored procedures in SQL Server. 
- </div>
-                </div>
-                <div class="full-divider"></div>
-                <div class="experience-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-quote-right"></i></div>
-                    <div class="flot-left">
-                      <h5>Grant Thornton ME</h5>
-                      <h4>Senior Full Stack Developer</h4>
-                      <span>2010 - 2013</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> Steered the implementation of large-scale .NET applications in the Middle East region.
- Led the development of new modules using ASP.NET and SQL server. </div>
-                </div>
-                <div class="full-divider"></div>
-                <div class="experience-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-bullhorn"></i></div>
-                    <div class="flot-left">
-                      <h5>Grant Thornton</h5>
-                      <h4>Senior Full Stack Developer </h4>
-                      <span>2005 - 2010</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> Supervised the development of in-house software, which became successful and implemented at more than 25
-banks and financial firms in the region. 
- </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Education -->
-      <article class="content education gray-bg" id="chaptereducation">
-        <div class="inner">
-          <h2>Education</h2>
-          <div class="title-divider"></div>
-          <h3>Just My Education</h3>
-          <p>Current Edution: Preparation for the Certified AWS Cloud Architect - Associate exam.</p>
-          <div class="education-con">
-            <div class="container-sub">
-              <div class="full-divider"></div>
-              <div class="row">
-                <div class="education-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-photo"></i></div>
-                    <div class="flot-left">
-                      <h5>Applied Science University</h5>
-                      <h4></h4>
-                      <span>1995 - 1999</span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> _____________________        Bachelors Degree .  Business Administration.                                    .</div>
-                </div>
-                <div class="full-divider"></div>
-                <div class="education-details">
-                  <div class="col-6 margin-bottom50 margin-top50">
-                    <div class="col-3 icon-block"><i class="fa fa-laptop"></i></div>
-                    <div class="flot-left">
-                      <h5>Technical Certifications</h5>
-                      <h4></h4>
-                      <span></span> </div>
-                  </div>
-                  <div class="col-6 margin-bottom50 margin-top50 no-margin-top"> Python for Data Science | IBM, 2017 – Present, Applied Data Science with Python - Level 2 | IBM, 2017 – Present,
-Project Management Professional | Optimal Academy, 2012.
-Certified Operational Risk Executive (CORE) | Corporate Governance Consultancy, 2007.
-Advanced Certified Operational Risk Executive (CORE2) | Corporate Governance Consultancy, 2010. 
- </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </article>
-      
-      <!-- Contact -->
-      <article class="content contact gray-bg" id="chaptercontact">
-        <div class="inner">
-          <h2>Contact</h2>
-          <div class="title-divider"></div>
-          <h3>Let's Keep In Touch</h3>
-          <div class="full-divider"></div>
-          <div class="contact-con margin-top50">
-            <div class="container-sub">
-              <div class="row">
-                <div class="contact-details">
-                  <div class="col-6">
-                    <div class="contact-text">
-                      <div class="col-2 icon-block address"><i class="fa fa-map-marker"></i></div>
-                      <div class="flot-left"> <strong>Amjad Masoud</strong><br>
-                        Madinah Road,<br>
-                        Amman 11937, Jordan. </div>
-                    </div>
-                    <div class="contact-text">
-                      <div class="col-2 icon-block phone"><i class="fa fa-phone"></i></div>
-                      <div class="flot-left"> <strong>Phone</strong><br>
-                        +962-799-312-787 </div>
-                    </div>
-                    <div class="contact-text">
-                      <div class="col-2 icon-block email"><i class="fa fa-envelope"></i></div>
-                      <div class="flot-left"> <strong>Email</strong><br>
-                        <a href="mailto:amjadmasoud@hotmail.com">amjadmasoud@hotmail.com</a> </div>
-                    </div>
-                  </div>
-                  <div class="col-6 m-margin-top30">
-                    <h3>I'm also on Social Networks</h3>
-                    <div class="contact-social margin-top30"><a href="https://www.facebook.com/amjad.masoud.9" target="_blank"><i class="fa fa-facebook"></i></a> <a href="https://twitter.com/AmjadoVI" target="_blank"><i class="fa fa-twitter"></i></a> <a href="https://www.linkedin.com/in/amjad-masoud-9308aa11/" target="_blank"><i class="fa fa-linkedin"></i></a> </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="full-divider"></div>
-          </div>
-        </div>
-      </article>
+<body>
+
+    <!-- Background animated lines -->
+    <div class="bg-pattern">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
-    <!-- content-wrapper --> 
-  </div>
-  <!-- content-scroller --> 
-</div>
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/head.min.js"></script>
-<!-- Portfolio Thumbnail --> 
-<script type="text/javascript" src="js/imagesloaded.min.js"></script> 
-<script type="text/javascript" src="js/masonry.min.js"></script> 
-<script type="text/javascript" src="js/class_helper.js"></script> 
-<script type="text/javascript" src="js/grid_gallery.js"></script> 
-<!-- Portfolio Grid --> 
-<script>
-    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
-</script>
-<!-- Portfolio Slider--> 
-<script type="text/javascript"  src="js/carousel.js"></script> 
-<script type="text/javascript" src="js/jquery.easypiechart.js"></script> 
-<script type="text/javascript" src="js/text.rotator.js"></script>
-<!-- Page Scrolling --> 
-<script>
-head.js(
-		{ mousewheel : "js/jquery.mousewheel.js" },
-		{ mwheelIntent : "js/mwheelIntent.js" },
-		{ jScrollPane : "js/jquery.jscrollpane.min.js" },
-		{ history : "js/jquery.history.js" },
-		{ stringLib : "js/core.string.js" },
-		{ easing : "js/jquery.easing.1.3.js" },
-		{ smartresize : "js/jquery.smartresize.js" },
-		{ page : "js/jquery.page.js" }
-		);
-</script>  
-<!-- Fit Video --> 
-<script type="text/javascript"  src="js/jquery.fitvids.js"></script>
-<!-- All Javascript Component--> 
-<script src="js/settings.js"></script>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">AM</div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#credentials">Credentials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('show')"
+            aria-label="Menu">
+            <i class="fas fa-bars"></i>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="top">
+        <div class="hero-content">
+
+            <div class="hero-badge">
+                <span class="dot"></span>
+                Open to Opportunities
+            </div>
+            <h1>
+                <span class="highlight">Amjad</span> Masoud
+            </h1>
+            <div class="hero-title-role">
+                <span>Manager</span> &bull; Digital Transformation &bull; Systems Design &bull; <span>AI
+                    Integration</span> (RAG)
+            </div>
+            <div class="hero-contact">
+                <a href="mailto:ideameister@gmail.com"><i class="fas fa-envelope"></i> ideameister@gmail.com</a>
+                <a href="https://www.linkedin.com/in/amjad-masoud-9308aa11" target="_blank"><i
+                        class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://amjadov.github.io/web/" target="_blank"><i class="fas fa-globe"></i> Portfolio</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i> Amman, Jordan</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number" data-target="22">0</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="8">0</div>
+                    <div class="stat-label">Companies</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number" data-target="5">0</div>
+                    <div class="stat-label">Certifications</div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">About Me</div>
+                <h2 class="section-title">Building the <span class="highlight"
+                        style="background: var(--gradient-gold); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">Future</span>
+                    of Digital</h2>
+            </div>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p>
+                        With over <strong style="color: var(--ey-yellow)">20 years</strong> of experience spanning
+                        software engineering, team leadership, and digital transformation, I bring deep expertise in
+                        building scalable systems and driving innovation across enterprise environments.
+                    </p>
+                    <p>
+                        At <strong style="color: var(--ey-yellow)">EY</strong>, I currently serve as a Manager in
+                        Digital Transformation, Systems Design, IT Advisory, and AI Integration — leveraging RAG
+                        architectures to deliver intelligent solutions. Previously at Mstart, I led teams,
+                        re-architected backend platforms, and scaled mission-critical systems.
+                    </p>
+                    <p>
+                        My passion lies in solving complex problems, enhancing user experience, and delivering
+                        high-quality, production-grade solutions using modern technologies.
+                    </p>
+                </div>
+                <div class="about-cards reveal reveal-delay-2 stagger-children">
+                    <div class="about-card">
+                        <div class="icon"><i class="fas fa-brain"></i></div>
+                        <h4>AI Integration</h4>
+                        <p>RAG architectures, Applied AI, intelligent automation solutions</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="icon"><i class="fas fa-server"></i></div>
+                        <h4>Systems Design</h4>
+                        <p>Scalable backends, high availability databases, microservices</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="icon"><i class="fas fa-users-cog"></i></div>
+                        <h4>Team Leadership</h4>
+                        <p>Led development teams, mentoring, agile orchestration</p>
+                    </div>
+                    <div class="about-card">
+                        <div class="icon"><i class="fas fa-chart-line"></i></div>
+                        <h4>Digital Transformation</h4>
+                        <p>Enterprise modernization, ERP, process optimization</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="skills-section" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Expertise</div>
+                <h2 class="section-title">Technical Toolkit</h2>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-category reveal">
+                    <h3><i class="fas fa-code"></i> Backend & Languages</h3>
+                    <div class="skill-tags stagger-children">
+                        <span class="skill-tag">C# / .NET</span>
+                        <span class="skill-tag">ASP.NET</span>
+                        <span class="skill-tag">RESTful APIs</span>
+                        <span class="skill-tag">Entity Framework</span>
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">PHP Laravel</span>
+                        <span class="skill-tag">SOAP / WCF</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-1">
+                    <h3><i class="fas fa-database"></i> Data & Databases</h3>
+                    <div class="skill-tags stagger-children">
+                        <span class="skill-tag">SQL Server</span>
+                        <span class="skill-tag">MySQL</span>
+                        <span class="skill-tag">Redis</span>
+                        <span class="skill-tag">Memcache</span>
+                        <span class="skill-tag">T-SQL</span>
+                        <span class="skill-tag">Stored Procedures</span>
+                        <span class="skill-tag">Data Architecture</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-2">
+                    <h3><i class="fas fa-laptop-code"></i> Frontend & Tools</h3>
+                    <div class="skill-tags stagger-children">
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">jQuery</span>
+                        <span class="skill-tag">Telerik</span>
+                        <span class="skill-tag">Win Forms</span>
+                        <span class="skill-tag">HTML / CSS</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-3">
+                    <h3><i class="fas fa-cloud"></i> DevOps & Infrastructure</h3>
+                    <div class="skill-tags stagger-children">
+                        <span class="skill-tag">MQ Service</span>
+                        <span class="skill-tag">AWS</span>
+                        <span class="skill-tag">Server Management</span>
+                        <span class="skill-tag">DB High Availability</span>
+                        <span class="skill-tag">CI/CD</span>
+                        <span class="skill-tag">Agile / Scrum</span>
+                    </div>
+                </div>
+                <div class="skill-category reveal reveal-delay-4">
+                    <h3><i class="fas fa-robot"></i> AI & Emerging Tech</h3>
+                    <div class="skill-tags stagger-children">
+                        <span class="skill-tag">RAG Architecture</span>
+                        <span class="skill-tag">Applied AI</span>
+                        <span class="skill-tag">Data Science</span>
+                        <span class="skill-tag">FinTech</span>
+                        <span class="skill-tag">ERP Systems</span>
+                        <span class="skill-tag">Twilio SDK</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="experience-section" id="experience">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Career Journey</div>
+                <h2 class="section-title">Experience</h2>
+            </div>
+            <div class="timeline">
+
+                <!-- EY -->
+                <div class="timeline-item current">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">EY (Ernst & Young)</span>
+                        <span class="timeline-current-badge">Current</span>
+                    </div>
+                    <div class="timeline-role">Manager — Digital Transformation | Systems | IT Advisory | AI Integration
+                        (RAG)</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Feb 2025 – Present</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amman, Jordan</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Leading digital transformation and AI integration initiatives using RAG architectures</li>
+                        <li>IT advisory and systems design for enterprise clients</li>
+                    </ul>
+                </div>
+
+                <!-- MSTART -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">Mstart</span>
+                    </div>
+                    <div class="timeline-role">Development Team Lead</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Jan 2021 – Sep 2024 · 3 yrs 9 mos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amman, Jordan</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Led a team of developers, orchestrating daily standups to drive project progress</li>
+                        <li>Managed server health with comprehensive weekly checkups for optimal performance</li>
+                        <li>Oversaw SQL Server database high availability and data integrity</li>
+                        <li>Proficient in C# and SQL Server stored procedures development</li>
+                    </ul>
+                    <div class="timeline-subrole">
+                        <div class="timeline-role">Senior Developer & DevOps Developer</div>
+                        <div class="timeline-meta">
+                            <span><i class="fas fa-calendar-alt"></i> May 2018 – Jan 2021 · 2 yrs 9 mos</span>
+                        </div>
+                        <ul class="timeline-desc">
+                            <li>Rewrote a SOAP service into a high-performance RESTful web service</li>
+                            <li>Rebuilt backend core framework for online and terminal orders using Redis, stored
+                                procedures, and Entity Framework</li>
+                            <li>Scaled out applications and databases, improving transaction speed by milliseconds</li>
+                            <li>Implemented No-SQL caching with Redis and Memcache for performance gains</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Kafou -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">Kafou for Services</span>
+                    </div>
+                    <div class="timeline-role">Part-time Software Development Consultant</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> May 2017 – Apr 2018 · 1 yr</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Amman, Jordan</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Built "Compliancearch" web app with C# ASP.NET, jQuery, and SQL Server</li>
+                        <li>Developed P2P & group video calling using PHP Laravel, MySQL, and Twilio SDK</li>
+                        <li>Created Web Service API for mobile chat application; hosted on AWS</li>
+                    </ul>
+                </div>
+
+                <!-- Mahmood Saleh Abbar -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">Mahmood Saleh Abbar</span>
+                    </div>
+                    <div class="timeline-role">ERP Implementation Specialist</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Mar 2013 – May 2017 · 4 yrs 3 mos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Jeddah, Saudi Arabia</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>ERP (Microsoft GP) implementation for 450+ employee organization</li>
+                        <li>Complex T-SQL stored procedures for statistics, finance, and auditing</li>
+                        <li>Developed small-scale .NET applications for management use</li>
+                    </ul>
+                </div>
+
+                <!-- Grant Thornton -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">Grant Thornton International</span>
+                    </div>
+                    <div class="timeline-role">Senior Full Stack Developer — C# .NET, MSSQL, JavaScript, Telerik</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Jul 2010 – Feb 2013 · 2 yrs 8 mos</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Supported a large-scale .NET application across the Middle East region</li>
+                        <li>Developed new modules with ASP.NET and SQL Server; served as IT ERP consultant</li>
+                    </ul>
+                </div>
+
+                <!-- Aldar Audit Bureau -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">Aldar Audit Bureau</span>
+                    </div>
+                    <div class="timeline-role">Senior Full Stack Developer — C# .NET, MSSQL, JavaScript, Telerik</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Jan 2005 – Jun 2010 · 5 yrs 6 mos</span>
+                        <span><i class="fas fa-map-marker-alt"></i> Saudi Arabia</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Developed in-house software "Care-web" under Grant Thornton SA & CGC UK management</li>
+                        <li>Managed client requests, hardware/software infrastructure, and a team of 2 developers</li>
+                    </ul>
+                </div>
+
+                <!-- VisualSoft -->
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-header">
+                        <span class="timeline-company">VisualSoft</span>
+                    </div>
+                    <div class="timeline-role">Full Stack Developer — C# .NET, MSSQL</div>
+                    <div class="timeline-meta">
+                        <span><i class="fas fa-calendar-alt"></i> Apr 2003 – Dec 2004 · 1 yr 9 mos</span>
+                    </div>
+                    <ul class="timeline-desc">
+                        <li>Built Sales, Payroll & Depreciation modules in ERP system with C# and Win Forms</li>
+                        <li>Gathered requirements, wrote technical specifications, and trained end users</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications, Education & Extras Section -->
+    <section class="certs-section" id="credentials">
+        <div class="container">
+            <div class="section-header reveal">
+                <div class="section-tag">Credentials</div>
+                <h2 class="section-title">Education & Certifications</h2>
+            </div>
+            <div class="certs-edu-grid">
+                <div class="cert-card reveal">
+                    <h4><i class="fas fa-certificate"></i> Certifications</h4>
+                    <div class="cert-item">
+                        <div class="name">EY Artificial Intelligence — Applied AI</div>
+                        <div class="issuer">Bronze Learning · 2025</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="name">Applied Data Science with Python — Level 2</div>
+                        <div class="issuer">Data Science Certification</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="name">Python for Data Science</div>
+                        <div class="issuer">Data Science Certification</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="name">Certified Operational Risk Executive (CORE)</div>
+                        <div class="issuer">Corporate Governance Consultancy / Aldar Audit Bureau — Grant Thornton SA ·
+                            2007</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="name">IT Management — Building Information Systems</div>
+                        <div class="issuer">Alison · 2015</div>
+                    </div>
+                </div>
+                <div class="edu-card reveal reveal-delay-1">
+                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
+                    <div class="edu-item">
+                        <div class="school">Applied Science University</div>
+                        <div class="degree">Bachelors, Business Administration · 1995 – 1999</div>
+                    </div>
+                    <div class="edu-item">
+                        <div class="school">De La Salle Frere</div>
+                        <div class="degree">High School Diploma</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Extras row -->
+            <div class="extras-grid reveal" style="margin-top: 40px;">
+                <div class="extra-card">
+                    <i class="fas fa-language"></i>
+                    <h4>Languages</h4>
+                    <p>English (Native) · Arabic (Native) · French (Elementary)</p>
+                </div>
+                <div class="extra-card">
+                    <i class="fas fa-trophy"></i>
+                    <h4>Honors & Awards</h4>
+                    <p>Student Computer Science Award</p>
+                </div>
+                <div class="extra-card">
+                    <i class="fas fa-lightbulb"></i>
+                    <h4>Patents</h4>
+                    <p>Registered Mobile Software at the Jordan National Library</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer / Contact CTA -->
+    <footer id="contact">
+        <div class="footer-cta">
+            Let's build something <span class="highlight">extraordinary</span> together.
+        </div>
+        <div class="footer-links">
+            <a href="mailto:ideameister@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/amjad-masoud-9308aa11" target="_blank" title="LinkedIn"><i
+                    class="fab fa-linkedin-in"></i></a>
+            <a href="https://amjadov.github.io/web/" target="_blank" title="Portfolio"><i class="fas fa-globe"></i></a>
+        </div>
+        <div class="footer-copy">
+            &copy; 2026 Amjad Masoud. Crafted with precision.
+        </div>
+    </footer>
+
+    <script>
+        // ===================== NAVBAR SCROLL EFFECT =====================
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            nav.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // ===================== SCROLL REVEAL ANIMATIONS =====================
+        const revealElements = document.querySelectorAll('.reveal, .timeline-item, .stagger-children');
+
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // ===================== COUNTER ANIMATION =====================
+        const counters = document.querySelectorAll('.stat-number');
+        let counterStarted = false;
+
+        const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !counterStarted) {
+                    counterStarted = true;
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000;
+                        const step = target / (duration / 16);
+                        let current = 0;
+
+                        const updateCounter = () => {
+                            current += step;
+                            if (current < target) {
+                                counter.textContent = Math.ceil(current) + '+';
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.textContent = target + '+';
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            });
+        }, { threshold: 0.5 });
+
+        counters.forEach(c => counterObserver.observe(c));
+
+        // ===================== SMOOTH SCROLL FOR NAV LINKS =====================
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // ===================== PARALLAX SUBTLE EFFECT ON HERO =====================
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const hero = document.querySelector('.hero-content');
+            if (hero && scrolled < window.innerHeight) {
+                hero.style.transform = `translateY(${scrolled * 0.15}px)`;
+                hero.style.opacity = 1 - (scrolled / (window.innerHeight * 0.8));
+            }
+        });
+
+        // ===================== SKILL TAG HOVER RIPPLE =====================
+        document.querySelectorAll('.skill-tag').forEach(tag => {
+            tag.addEventListener('mouseenter', function () {
+                this.style.transition = 'all 0.15s ease';
+            });
+        });
+    </script>
 </body>
+
 </html>

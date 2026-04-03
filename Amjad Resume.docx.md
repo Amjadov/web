@@ -3,7 +3,7 @@
 |  | **Amjad M. Masoud, PMP** Amman, Jordan amjadmasoud@hotmail.com ∙ (+962) 799312787 [linkedin.com/in/amjad-m-masoud-pmp-9308aa11/](https://www.linkedin.com/in/amjad-m-masoud-pmp-9308aa11/) ∙ [amjadov.github.io/web/](https://amjadov.github.io/web/) |  |
 | :---: | :---: | :---: |
 
-**Senior IT Leader | Project & Program Manager (PMP) | Enterprise Architecture (TOGAF) | Digital Transformation Strategist** 
+**Senior IT Leader | Project & Program Manager (PMP) | Enterprise Architecture (TOGAF) | Digital Transformation** 
 
 Results-driven IT leader and PMP-certified Project Manager with 20+ years of experience steering large-scale digital transformation programs, enterprise modernization, and cross-functional team leadership. Proven ability to bridge the gap between C-suite strategy and technical execution — turning complex, legacy-laden environments into scalable, high-performance platforms.
 
@@ -44,7 +44,7 @@ Key Achievements:
 * Facilitated stakeholder workshops and weekly executive sprint reviews, securing formal client sign-off on all major deliverables.
 * Maintained project health through proactive risk register management, sprint velocity tracking, and continuous alignment with budgetary and schedule baselines.
 
-**Development Team Lead | Technical Architect** (2021 – 2024) 	MStart, Amman, Jordan
+**Development Team Lead | Project Lead** (2018 – 2024) 	MStart, Amman, Jordan
 
 Recruited to lead the technical overhaul of a high-traffic e-commerce platform, owning both team leadership and solution architecture. Built and managed dual-stream backend and mobile teams while driving a legacy-to-modern platform migration.
 
@@ -57,19 +57,7 @@ Key Achievements:
 * Directed the migration to a modern Android application, significantly reducing bug reports and improving end-user experience.
 * Balanced hands-on technical delivery (C#, SQL) with people management and stakeholder communication.
 
-**Senior Systems Developer** (2018 – 2021) 	MStart, Amman, Jordan
-
-*Technical Scope: C# .NET, RESTful APIs, SQL Server, Redis, Memcache, MQ Services*
-
-Led task allocation and issue resolution across the development team while driving architectural improvements to core platform services.
-
-***Key Achievements:***
-
-* Re-architected SOAP services into lightweight RESTful APIs, improving maintainability and enabling the platform to process 200,000+ transactions per day — a 400% increase in sales throughput.
-* Diagnosed and resolved critical performance bottlenecks (deadlocks, timeouts) achieving millisecond-level transaction improvements and enabling horizontal scale-out of applications and databases.
-* Designed and implemented optimized stored procedures and user-defined data types to support high-volume transactional workloads.
-
-**Software Development Consultant** (2017 – Present) 	Kafou Services, Jordan
+**Software Development Consultant** (2017 – 2020) 	Kafou Services, Jordan
 
 *Technical Scope: C# ASP.NET, Python Django, PHP Laravel/CodeIgniter, SQL Server, MySQL, Scikit-Learn, Twilio SDK*
 

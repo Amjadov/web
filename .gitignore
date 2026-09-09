@@ -1,1 +1,5 @@
 محمد امجد مسعود.odp
+dist/
+.site-publish/
+.site-upload.tar.gz
+.site-push.mjs
